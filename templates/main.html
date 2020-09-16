@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather in {{name}}</title>
+    <style>
+<!--    .weather-->
+<!--    {-->
+<!--        display: flex;-->
+<!--        flex-flow: column wrap;-->
+<!--        box-shadow: 0px 1px 10px 0px #cfcfcf;-->
+<!--        overflow: hidden;-->
+<!--    }-->
+
+        .weather .current
+        {
+            display: flex;
+            flex-flow: row wrap;
+            background-repeat: repeat-x;
+            color: white;
+            padding: 20px;
+            text-shadow: 1px 1px #F68D2E;
+            background-color: sienna;
+        }
+
+            .weather .current .info
+            {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-around;
+                flex-grow: 2;
+            }
+
+                .weather .current .info .city
+                {
+                    font-size: 26px;
+                }
+
+                .weather .current .info .temp
+                {
+                    font-size: 56px;
+                }
+
+                .weather .current .info .wind
+                {
+                    font-size: 24px;
+                }
+
+            .weather .current .icon
+            {
+                text-align: center;
+                font-size: 64px;
+                flex-grow: 1;
+            }
+
+        .weather .future
+        {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+            .weather .future .day
+            {
+                flex-grow: 1;
+                text-align: center;
+                cursor: pointer;
+            }
+
+                .weather .future .day:hover
+                {
+                    color: #fff;
+                    background-color: #F68D2E;
+                }
+
+                .weather .future .day h3
+                {
+                    text-transform: uppercase;
+                }
+
+                .weather .future .day p
+                {
+                    font-size: 28px;
+                }
+
+                .active-cyan .fa, .active-cyan-2 .fa {
+                 color: #4dd0e1;
+}
+
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="/Content/css/weather-icons/css/weather-icons.min.css"/>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container"  align="center">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="weather">
+                <div class="current">
+                    <div class="info">
+                        <div class="wind" >
+                            <img src={{icon}}>
+                        </div>
+
+                        <div>&nbsp;</div>
+                        <div class="city">
+
+                            <small>
+                                <small>CITY:</small>
+                            </small>
+                            {{name}}
+                        </div>
+                        <div class="wind">
+                            <small>
+                                <small>TIME:</small>
+                            </small>
+                            {{time}}
+                        </div>
+                        <div class="temp">{{temp}}&deg;
+                            <small>C</small>
+                        </div>
+                        <div class="wind">
+                            <small>
+                                <small>FEELS LIKE:</small>
+                            </small>
+                            {{feels_like}}&deg;
+                        </div>
+                        <div class="wind">
+                            <small>
+                                <small>HUMIDITY:</small>
+                            </small>
+                            {{humidity}}&percnt;
+                        </div>
+                        <div class="wind">
+                            <small>
+                                <small>DESCRIPTION:</small>
+                            </small>
+                            {{description}}
+                        </div>
+                        <div class="wind">
+                            <small>
+                                <small>WIND:</small>
+                            </small>
+                            {{wind}} km/h
+                        </div>
+                        <div>&nbsp;</div>
+                    </div>
+                    <div class="icon">
+                        <span class="wi-day-sunny"></span>
+                    </div>
+                </div>
+                <form method="post">
+                    <!-- Search form -->
+<div class="md-form active-cyan active-cyan-2 mb-3">
+  <input class="form-control" type="text" name="town" placeholder="Search" aria-label="Search">
+</div>
+                        <button type="submit" class="btn btn-dark">Get Info</button>
+
+</form>
+<!--                    <input type="text" name="town" placeholder="GIVE TOWN" size="100">-->
+
+<!--                    <input type="submit">-->
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
